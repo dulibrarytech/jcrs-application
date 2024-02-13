@@ -22,7 +22,7 @@ const HTTP = require('axios');
 const CONFIG = require('../config/config');
 const DB = require('../config/db_config')();
 const DB_TABLES = require('../config/db_tables_config')();
-const RECORDS = DB_TABLES.records;
+const RECORDS = DB_TABLES.jcrs.records;
 const LOGGER = require('../libs/log4');
 
 /**
@@ -87,7 +87,6 @@ exports.get_record_uuids = function (callback) {
         .then(function () {
             // always executed
         });
-
 
     callback({
         status: 200,
