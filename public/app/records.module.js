@@ -36,7 +36,7 @@ const recordsModule = (function () {
 
             let response = await httpModule.req({
                 method: 'GET',
-                url: '/api/v1/patients',
+                url: '/jcrs-records/api/v1/patients',
                 headers: {
                     'Content-Type': 'application/json',
                     'x-access-token': ''

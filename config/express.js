@@ -45,8 +45,7 @@ module.exports = function() {
     APP.use(BODYPARSER.json());
     APP.use(METHODOVERRIDE());
     APP.use(HELMET());
-
-    APP.use(EXPRESS.static('./public'));
+    APP.use('/jcrs-records/static', EXPRESS.static('./public'));
     APP.use(XSS.sanitize_req_query);
     APP.use(XSS.sanitize_req_body);
     APP.set('views', './views');

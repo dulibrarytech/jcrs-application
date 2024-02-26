@@ -34,13 +34,13 @@ module.exports = function (app) {
     /**
      * Renders application home template
      */
-    app.route('/')
+    app.route('/jcrs-records')
         .get(CONTROLLER.get_home);
 
     /** TODO: check token
      * Gets patient records to render on main application template
      */
-    app.route('/api/v1/patients')
+    app.route('/jcrs-records/api/v1/patients')
         .get(CORS(CORSOPTIONS), CONTROLLER.get_patient_records);
 
     /**
