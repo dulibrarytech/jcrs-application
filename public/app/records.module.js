@@ -260,7 +260,6 @@ const recordsModule = (function () {
 
         html = create_display(records);
         document.querySelector('#patient-records').innerHTML = html;
-        // domModule.html('#patient-records', html);
 
         setTimeout(() => {
 
@@ -271,7 +270,7 @@ const recordsModule = (function () {
 
             hide_loader();
 
-        }, 75);
+        }, 0);
     };
 
     obj.init = async function () {

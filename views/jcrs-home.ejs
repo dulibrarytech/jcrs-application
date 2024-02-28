@@ -23,13 +23,13 @@
     </style>
 </head>
 <body class="d-flex flex-column h-100">
-<h1 aria-hidden="true" class="visually-hidden">&nbsp;&nbsp;Jewish Consumptives' Relief Society Patient Records</h1>
+<h1 aria-hidden="true" class="visually-hidden">Jewish Consumptives' Relief Society Patient Records</h1>
 <header>
     <nav class="navbar navbar-expand-md fixed-top" style="background-color: white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="/jcrs-records/static/assets/img/du-logo.png" height="50" alt="University of Denver">
-                Jewish Consumptives' Relief Society
+            <a class="navbar-brand" href="/jcrs-records">
+                <img src="/jcrs-records/static/assets/img/du-logo.png" height="45" alt="University of Denver">
+                &nbsp;&nbsp;&nbsp;Jewish Consumptives' Relief Society
             </a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,23 +45,33 @@
 <main class="flex-shrink-0">
     <div class="container">
         <div class="row">
-            <p>The <a href="http://hdl.handle.net/10176/a5efb5d1-0484-429c-95a5-15c12ff40ca0" target="_blank">Jewish Consumptives' Relief Society</a> was known as the JCRS and was founded in Denver, Colorado in 1904
+            <p>The <a href="http://hdl.handle.net/10176/a5efb5d1-0484-429c-95a5-15c12ff40ca0" target="_blank">Jewish
+                    Consumptives' Relief Society</a> was known as the JCRS and was founded in Denver, Colorado in 1904
                 as a non-sectarian sanatorium to treat tuberculosis (TB) patients, free of charge, in all stages of the
                 disease. The society was one of the leading tuberculosis sanatoria in the country at the turn of the
                 century founded by a group of immigrant Eastern European Jewish men, many of whom were themselves
-                victims of TB. Headed by <a href="https://specialcollections.du.edu/search?field%5B%5D=All&q%5B%5D=Dr.+Charles+Spivak&type%5B%5D=contains&bool%5B%5D=or" target="_blank">Dr. Charles Spivak</a> as Secretary (1904-1927) and by <a href="https://specialcollections.du.edu/search?field%5B%5D=All&q%5B%5D=Dr.+Philip+Hillkowitz&type%5B%5D=contains&bool%5B%5D=or" target="_blank">Dr. Philip Hillkowitz</a> as
-                President (1904-1948), the sanatorium treated primarily Jewish patients (notably, <a href="https://specialcollections.du.edu/search?field%5B%5D=All&q%5B%5D=Solomon+Bloomgarden&type%5B%5D=contains&bool%5B%5D=or" target="_blank">Solomon Bloomgarden</a>
-                who served as publicity chairman). In 1954 Jewish Consumptives' Relief Society (JCRS) changed its mission to cancer research and became the American Medical Center and later known as the <a href="https://duarchives.coalliance.org/repositories/2/resources/188" target="_blank"> AMC Cancer Research Center</a>. AMC completely merged with the University of Colorado Health Sciences Center in 2014.
+                victims of TB. Headed by <a
+                        href="https://specialcollections.du.edu/search?field%5B%5D=All&q%5B%5D=Dr.+Charles+Spivak&type%5B%5D=contains&bool%5B%5D=or"
+                        target="_blank">Dr. Charles Spivak</a> as Secretary (1904-1927) and by <a
+                        href="https://specialcollections.du.edu/search?field%5B%5D=All&q%5B%5D=Dr.+Philip+Hillkowitz&type%5B%5D=contains&bool%5B%5D=or"
+                        target="_blank">Dr. Philip Hillkowitz</a> as
+                President (1904-1948), the sanatorium treated primarily Jewish patients (notably, <a
+                        href="https://specialcollections.du.edu/search?field%5B%5D=All&q%5B%5D=Solomon+Bloomgarden&type%5B%5D=contains&bool%5B%5D=or"
+                        target="_blank">Solomon Bloomgarden</a>
+                who served as publicity chairman). In 1954 Jewish Consumptives' Relief Society (JCRS) changed its
+                mission to cancer research and became the American Medical Center and later known as the <a
+                        href="https://duarchives.coalliance.org/repositories/2/resources/188" target="_blank"> AMC
+                    Cancer Research Center</a>. AMC completely merged with the University of Colorado Health Sciences
+                Center in 2014.
             </p>
         </div>
         <hr>
         <br>
         <div id="loading" class="alert alert-info">
-            <div class="spinner-border" role="status">
+            <div class="spinner-border spinner-border-sm" role="status">
                 <span class="sr-only">Loading...</span>
             </div>&nbsp;&nbsp;&nbsp;&nbsp;<strong><span id="loading-message">Retrieving records...</span></strong>
         </div>
-
         <table id="patient-records" class="dataTable table-responsive" style="visibility: hidden"></table>
     </div>
 </main>
@@ -71,9 +81,7 @@
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="/jcrs-records/static/assets/js/plugin/datatables/datatables.min.js"></script>
 <script src="/jcrs-records/static/libs/viewerjs/js/spotlight.min.js"></script>
 <script src="/jcrs-records/static/libs/axios-2.x/dist/axios.min.js"></script>
@@ -86,7 +94,7 @@
 <script src="/jcrs-records/static/app/records.module.js"></script>
 <script>
     recordsModule.init();
-    helperModule.onLoadVisibility('#patient-records', 250);
+    helperModule.onLoadVisibility('#patient-records', 450);
 </script>
 </body>
 </html>
