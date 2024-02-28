@@ -61,6 +61,7 @@ const recordsModule = (function () {
 
         document.querySelector('#loading-message').innerHTML = 'Loading records...';
 
+        const number_of_records = records.length;
         let html = '';
         html += `<thead>
             <tr>
@@ -68,16 +69,16 @@ const recordsModule = (function () {
             </tr>
             </thead><tbody>`;
 
-        for (let i = 0; i < records.length; i++) {
+        for (let i = 0; i < number_of_records; i++) {
 
             let repo_handle = '';
             let search_archives = `<a href="${jcrs_search}" target="_blank" title="Jewish Consumptives' Relief Society"><i class="fa fa-search pr-1"></i>&nbsp; Search Digital Archive</a><br>`;
             let patient_name = `<i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;${records[i].last_name}, ${records[i].first_name}`;
-            let patient_id = `Patient ID:  ${records[i].pid}<br>`;
+            let patient_id = `<label style="font-weight: bold; font-size: small;">Patient ID:</label>  ${records[i].pid}<br>`;
             let name_variation = '';
             let date_of_application = '';
-            let sex = `Sex: ${records[i].sex}<br>`;
-            let age = `Age: ${records[i].age}<br>`;
+            let sex = `<label style="font-weight: bold; font-size: small">Sex:</label> ${records[i].sex}<br>`;
+            let age = `<label style="font-weight: bold; font-size: small">Age:</label> ${records[i].age}<br>`;
             let birth_city = '';
             let birth_state = '';
             let place_of_birth = '';
@@ -106,44 +107,44 @@ const recordsModule = (function () {
 
             if (records[i].date_of_application.length > 0) {
                 let date = helperModule.format_date(records[i].date_of_application);
-                date_of_application = `Date of Application: ${date}<br>`;
+                date_of_application = `<label style="font-weight: bold; font-size: small">Date of Application:</label> ${date}<br>`;
             }
 
             if (records[i].birth_city.length > 0) {
-                birth_city = `Birth City: ${records[i].birth_city}<br>`;
+                birth_city = `<label style="font-weight: bold; font-size: small">Birth City:</label> ${records[i].birth_city}<br>`;
             }
 
             if (records[i].birth_state.length > 0) {
-                birth_state = `Birth State: ${records[i].birth_state}<br>`;
+                birth_state = `<label style="font-weight: bold; font-size: small">Birth State:</label> ${records[i].birth_state}<br>`;
             }
 
             if (records[i].place_of_birth.length > 0) {
-                place_of_birth = `Place of Birth: ${records[i].place_of_birth}<br>`;
+                place_of_birth = `<label style="font-weight: bold; font-size: small">Place of Birth:</label> ${records[i].place_of_birth}<br>`;
             }
 
             if (records[i].arrival_in_us.length > 0) {
-                arrival_in_us = `Arrival in US: ${records[i].arrival_in_us}<br>`;
+                arrival_in_us = `<label style="font-weight: bold; font-size: small">Arrival in US:</label> ${records[i].arrival_in_us}<br>`;
             }
 
             if (records[i].occupation.length > 0) {
-                occupation = `Occupation: ${records[i].occupation}<br>`;
+                occupation = `<label style="font-weight: bold; font-size: small">Occupation:</label> ${records[i].occupation}<br>`;
             }
 
             if (records[i].marital_status.length > 0) {
-                marital_status = `Marital Status: ${records[i].marital_status}<br>`;
+                marital_status = `<label style="font-weight: bold; font-size: small">Marital Status:</label> ${records[i].marital_status}<br>`;
             }
 
             if (records[i].number_of_children.length > 0) {
-                number_of_children = `Number of Children: ${records[i].number_of_children}<br>`;
+                number_of_children = `<label style="font-weight: bold; font-size: small">Number of Children:</label> ${records[i].number_of_children}<br>`;
             }
 
             if (records[i].ages_of_children.length > 0) {
-                ages_of_children = `Ages of Children: ${records[i].ages_of_children}<br>`;
+                ages_of_children = `<label style="font-weight: bold; font-size: small">Ages of Children:</label> ${records[i].ages_of_children}<br>`;
             }
 
             if (records[i].former_address.length > 0) {
 
-                former_address = `<br>Former Address:<br> ${records[i].address_at_time_of_application}<br>`;
+                former_address = `<br><label style="font-weight: bold; font-size: small">Former Address:</label><br> ${records[i].address_at_time_of_application}<br>`;
 
                 if (records[i].former_city.length > 0 || records[i].former_state > 0) {
                     former_address += `${records[i].former_city}, ${records[i].former_state}`;
@@ -152,23 +153,22 @@ const recordsModule = (function () {
 
             if (records[i].date_of_admission.length > 0) {
                 let date = helperModule.format_date(records[i].date_of_admission);
-                date_of_admission = `Date of Admission: ${date}<br>`;
-
+                date_of_admission = `<label style="font-weight: bold; font-size: small">Date of Admission:</label> ${date}<br>`;
             }
 
             if (records[i].date_of_discharge.length > 0) {
                 let date = helperModule.format_date(records[i].date_of_discharge);
-                date_of_discharge = `Date of Discharge: ${date}<br>`;
+                date_of_discharge = `<label style="font-weight: bold; font-size: small">Date of Discharge:</label> ${date}<br>`;
             }
 
             if (records[i].date_of_death.length > 0) {
                 let date = helperModule.format_date(records[i].date_of_death);
-                date_of_death = `Date of Death: ${date}<br>`;
+                date_of_death = `<label style="font-weight: bold; font-size: small">Date of Death:</label> ${date}<br>`;
             }
 
             if (records[i].address_at_time_of_application.length > 0) {
 
-                address_at_time_of_application = `<br>Address at the time of Application:<br> ${records[i].address_at_time_of_application}<br>`;
+                address_at_time_of_application = `<br><label style="font-weight: bold; font-size: small">Address at the time of Application:</label><br> ${records[i].address_at_time_of_application}<br>`;
 
                 if (records[i].city.length > 0 || records[i].state > 0) {
                     address_at_time_of_application += `${records[i].city}, ${records[i].state}<br><br>`;
@@ -176,7 +176,7 @@ const recordsModule = (function () {
             }
 
             if (records[i].disease_duration.length > 0) {
-                disease_duration = `Duration of Disease: ${records[i].disease_duration}<br>`;
+                disease_duration = `<label style="font-weight: bold; font-size: small">Duration of Disease:</label> ${records[i].disease_duration}<br>`;
             }
 
             if (records[i].contracted_city.length > 0 || records[i].contracted_state.length > 0 || records[i].contracted_country.length > 0) {
@@ -184,7 +184,7 @@ const recordsModule = (function () {
             }
 
             if (records[i].notes !== null && records[i].notes.length > 0) {
-                notes = `Notes: ${records[i].notes}<br><hr>`;
+                notes = `<label style="font-weight: bold; font-size: small">Notes:</label> ${records[i].notes}<br><hr>`;
             } else {
                 notes = 'No notes available<br><hr>';
             }
