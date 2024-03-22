@@ -32,7 +32,6 @@ module.exports = {
     dbPassword: process.env.DB_PASSWORD,
     dbName: process.env.DB_NAME,
     apiUrl: process.env.API_URL,
-    corsOrigin: process.env.CORS_ORIGIN,
     repoEndpoint: process.env.REPO_ENDPOINT,
     repoApiKey: process.env.REPO_API_KEY,
     repoHandleUrl: process.env.REPO_HANDLE_URL,

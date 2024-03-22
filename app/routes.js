@@ -21,42 +21,31 @@
 const CONTROLLER = require('./controller');
 const CONFIG = require('../config/config');
 const CORS = require('cors');
+const ALLOW = [CONFIG.host, 'http://localhost'];
+const CORS_OPTIONS = function (req, callback) {
+
+    let cors_options;
+
+    if (ALLOW.indexOf(req.header('Origin')) !== -1) {
+        cors_options = {origin: true}
+    } else {
+        cors_options = {origin: false}
+    }
+
+    callback(null, cors_options);
+};
 
 module.exports = function (app) {
-
-    const CORSOPTIONS = {
-        'origin': CONFIG.corsOrigin,
-        'methods': 'GET',
-        'preflightContinue': true,
-        'optionsSuccessStatus': 204
-    };
 
     /**
      * Renders application home template
      */
     app.route('/jcrs-records')
-        .get(CONTROLLER.get_home);
+        .get(CORS(CORS_OPTIONS), CONTROLLER.get_home);
 
-    /** TODO: check token
+    /**
      * Gets patient records to render on main application template
      */
     app.route('/jcrs-records/api/v1/patients')
-        .get(CORS(CORSOPTIONS), CONTROLLER.get_patient_records);
-
-    /**
-     * Gets patient record details by id
-     * @param id
-     */
-    /*
-    app.route('/api/v1/patient')
-        .get(CORS(CORSOPTIONS), CONTROLLER.get_patient_record);
-    */
-
-    /**
-     * Gets patient images (scanned documents) from digitaldu repository image service
-     */
-    /*
-    app.route('/api/v1/images')
-        .get(CORS(CORSOPTIONS), CONTROLLER.get_images);
-    */
+        .get(CORS(CORS_OPTIONS), CONTROLLER.get_patient_records);
 };

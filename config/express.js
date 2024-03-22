@@ -55,6 +55,10 @@ module.exports = function() {
     require('../app/routes.js')(APP);
     require('../utils/routes.js')(APP);
 
+    APP.get('*', function(req, res){
+        res.status(404).send('Resource Not Found');
+    });
+
     CACHE.clear_cache();
     SERVER.listen(process.env.APP_PORT);
 
