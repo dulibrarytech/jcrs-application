@@ -27,9 +27,9 @@ const CORS_OPTIONS = function (req, callback) {
     let cors_options;
 
     if (ALLOW.indexOf(req.header('Origin')) !== -1) {
-        cors_options = {origin: true}
+        cors_options = {origin: true};
     } else {
-        cors_options = {origin: false}
+        cors_options = {origin: false};
     }
 
     callback(null, cors_options);

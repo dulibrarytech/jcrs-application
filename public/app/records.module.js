@@ -48,8 +48,7 @@ const recordsModule = (function () {
             }
 
         } catch (error) {
-            // TODO: DOM
-            console.log('ERROR: ', error.message);
+            document.querySelector('#patient-records').innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
         }
     }
 
