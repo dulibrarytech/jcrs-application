@@ -20,7 +20,6 @@
 
 const CONFIG = require('../config/config');
 const MODEL = require('./model');
-const MINIFY = require('html-minifier').minify;
 const HTTP = require('axios');
 const LOGGER = require('../libs/log4');
 
