@@ -36,9 +36,9 @@ const recordsModule = (function () {
 
             let response = await httpModule.req({
                 method: 'GET',
-                url: '/jcrs-records/api/v1/patients',
+                url: '/records/api/v1/patients',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/html',
                     'x-access-token': ''
                 }
             });
@@ -54,13 +54,12 @@ const recordsModule = (function () {
 
     /**
      * Creates HTML display
-     * @param records
      */
-    function create_display(records) {
+    async function create_display() {
 
+        const records = await get_records();
         document.querySelector('#loading-message').innerHTML = 'Loading records...';
 
-        const number_of_records = records.length;
         let html = '';
         html += `<thead>
             <tr>
@@ -68,7 +67,7 @@ const recordsModule = (function () {
             </tr>
             </thead><tbody>`;
 
-        for (let i = 0; i < number_of_records; i++) {
+        for (let i = 0; i < records.length; i++) {
 
             let repo_handle = '';
             let search_archives = `<a href="${jcrs_search}" target="_blank" title="Jewish Consumptives' Relief Society"><i class="fa fa-search pr-1"></i>&nbsp; Search Digital Archive</a><br>`;
@@ -240,24 +239,6 @@ const recordsModule = (function () {
 
         html += `</tbody>`;
 
-        return html;
-    }
-
-    /**
-     * Renders patient records
-     */
-    async function render_records() {
-
-        const records = await get_records();
-        let html = '';
-
-        if (records.length === 0) {
-            html = '<div class="alert alert-info"><strong><i class="fa fa-info-circle"></i>&nbsp; No Records found.</strong></div>';
-            domModule.html('#records', html);
-            return false;
-        }
-
-        html = create_display(records);
         document.querySelector('#patient-records').innerHTML = html;
 
         setTimeout(() => {
@@ -270,10 +251,10 @@ const recordsModule = (function () {
             hide_loader();
 
         }, 0);
-    };
+    }
 
     obj.init = async function () {
-        await render_records();
+        await create_display();
     };
 
     return obj;

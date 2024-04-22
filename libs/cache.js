@@ -37,8 +37,10 @@ const construct_cache_key = function (req) {
  * @param data
  */
 exports.cache_request = function (req, data) {
-    let key = construct_cache_key(req);
-    MCACHE.put(key, data, CACHE_TIME, function (key, value) {
+    const key = construct_cache_key(req);
+    console.log('caching');
+    MCACHE.put(key, 'mydata', CACHE_TIME, function (key, value) {
+        console.log(value);
         LOGGER.module().info('INFO: [/libs/cache (cache_request)] ' + key + ' cached.');
     });
 };
@@ -50,6 +52,8 @@ exports.cache_request = function (req, data) {
  */
 exports.get_cache = function (req) {
     let key = construct_cache_key(req);
+    console.log(key);
+    console.log(MCACHE.get(key));
     return MCACHE.get(key);
 };
 

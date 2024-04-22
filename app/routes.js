@@ -40,12 +40,18 @@ module.exports = function (app) {
     /**
      * Renders application home template
      */
-    app.route('/jcrs-records')
+    app.route('/records')
         .get(CORS(CORS_OPTIONS), CONTROLLER.get_home);
 
     /**
      * Gets patient records to render on main application template
      */
-    app.route('/jcrs-records/api/v1/patients')
+    app.route('/records/api/v1/patients')
         .get(CORS(CORS_OPTIONS), CONTROLLER.get_patient_records);
+
+    /*
+    app.route('/records/api/v1/patients/ss')
+    .get(CORS(CORS_OPTIONS), CONTROLLER.get_patient_records_ss);
+
+     */
 };
