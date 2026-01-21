@@ -23,7 +23,6 @@ const MODEL = require('./model');
 const HTTP = require('axios');
 const LOGGER = require('../libs/log4');
 
-
 exports.get_home = function (req, res) {
 
     res.renderStatic('jcrs-home', {
@@ -39,6 +38,7 @@ exports.get_patient_records = async function (req, res) {
         const data = await MODEL.get_records();
         res.status(data.status).send(data.data);
     } catch (error) {
+        // TODO: log error
         res.status(500).send({});
     }
 };
