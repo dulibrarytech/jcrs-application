@@ -20,20 +20,17 @@
 
 const CONFIG = require('../config/config');
 
-let dbName = CONFIG.dbName;
+let dbFile = 'jcrs.db';
 
 if (CONFIG.nodeEnv === 'test') {
-    dbName = 'jcrs_test';
+    dbFile = 'jcrs_test.db';
 }
 
 const Db_config = require('knex')({
-    client: 'mysql2',
-    connection: {
-        host: CONFIG.dbHost,
-        user: CONFIG.dbUser,
-        password: CONFIG.dbPassword,
-        database: dbName
-    }
+  client: "sqlite3",
+  connection: {
+    filename: dbFile
+  },
 });
 
 module.exports = function () {

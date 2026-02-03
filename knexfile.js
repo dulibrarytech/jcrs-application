@@ -16,21 +16,27 @@
 
  */
 
-'use strict';
-
 module.exports = {
-    host: process.env.HOST,
-    appName: process.env.APP_NAME,
-    appVersion: process.env.APP_VERSION,
-    organization: process.env.ORGANIZATION,
-    tokenSecret: process.env.TOKEN_SECRET,
-    tokenAlgo: process.env.TOKEN_ALGO,
-    tokenExpires: process.env.TOKEN_EXPIRES,
-    tokenIssuer: process.env.TOKEN_ISSUER,
-    apiUrl: process.env.API_URL,
-    repoEndpoint: process.env.REPO_ENDPOINT,
-    repoApiKey: process.env.REPO_API_KEY,
-    repoHandleUrl: process.env.REPO_HANDLE_URL,
-    repoImagesEndpoint: process.env.REPO_IMAGES_ENDPOINT,
-    nodeEnv: process.env.NODE_ENV
+
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: 'jcrs.db'
+    }
+  },
+
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: 'jcrs_test.db'
+    }
+  },
+
+  production: {
+    client: 'sqlite3',
+    connection: {
+      filename: 'jcrs.db'
+    }
+  }
+
 };

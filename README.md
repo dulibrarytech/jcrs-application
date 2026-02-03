@@ -26,13 +26,12 @@ All other content is released under [CC-BY-4.0](https://creativecommons.org/lice
 ### Local Environment Setup
 
 ```
-Have MySql 5.5 - 5.7
 cd into jcrs
 npm install
 Add .env file in root folder (see .env-example)
-Import mysql schemas "jcrs" to db, schemas found in db folder.  Change extensions from .txt to .sql
+Get a copy of the `jcrs.db` SQLite file from a team member and add it to the root directory
 run "node jcrs.js"
-http://localhost:8005/
+http://localhost:8005/records
 ```
 
 ### Maintainers
