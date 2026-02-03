@@ -83,48 +83,48 @@ function process_records(records) {
             repo_handle = `<a href="${handle}" target="_blank" title="Archived Patient Documents"><i class="fa fa-archive pr-i"></i>&nbsp; Archived Patient Documents</a><br>`;
         }
 
-        if (records[i].name_variation.length > 0) {
+        if (records[i].name_variation?.length > 0) {
             name_variation = `(${records[i].name_variation})`;
         }
 
-        if (records[i].date_of_application.length > 0) {
+        if (records[i].date_of_application?.length > 0) {
             let date = format_date(records[i].date_of_application);
             date_of_application = `<label style="font-weight: bold; font-size: small">Date of Application:</label> ${date}<br>`;
         }
 
-        if (records[i].birth_city.length > 0) {
+        if (records[i].birth_city?.length > 0) {
             birth_city = `<label style="font-weight: bold; font-size: small">Birth City:</label> ${records[i].birth_city}<br>`;
         }
 
-        if (records[i].birth_state.length > 0) {
+        if (records[i].birth_state?.length > 0) {
             birth_state = `<label style="font-weight: bold; font-size: small">Birth State:</label> ${records[i].birth_state}<br>`;
         }
 
-        if (records[i].place_of_birth.length > 0) {
+        if (records[i].place_of_birth?.length > 0) {
             place_of_birth = `<label style="font-weight: bold; font-size: small">Place of Birth:</label> ${records[i].place_of_birth}<br>`;
         }
 
-        if (records[i].arrival_in_us.length > 0) {
+        if (records[i].arrival_in_us?.length > 0) {
             arrival_in_us = `<label style="font-weight: bold; font-size: small">Arrival in US:</label> ${records[i].arrival_in_us}<br>`;
         }
 
-        if (records[i].occupation.length > 0) {
+        if (records[i].occupation?.length > 0) {
             occupation = `<label style="font-weight: bold; font-size: small">Occupation:</label> ${records[i].occupation}<br>`;
         }
 
-        if (records[i].marital_status.length > 0) {
+        if (records[i].marital_status?.length > 0) {
             marital_status = `<label style="font-weight: bold; font-size: small">Marital Status:</label> ${records[i].marital_status}<br>`;
         }
 
-        if (records[i].number_of_children.length > 0) {
+        if (records[i].number_of_children?.length > 0) {
             number_of_children = `<label style="font-weight: bold; font-size: small">Number of Children:</label> ${records[i].number_of_children}<br>`;
         }
 
-        if (records[i].ages_of_children.length > 0) {
+        if (records[i].ages_of_children?.length > 0) {
             ages_of_children = `<label style="font-weight: bold; font-size: small">Ages of Children:</label> ${records[i].ages_of_children}<br>`;
         }
 
-        if (records[i].former_address.length > 0) {
+        if (records[i].former_address?.length > 0) {
 
             former_address = `<br><label style="font-weight: bold; font-size: small">Former Address:</label><br> ${records[i].address_at_time_of_application}<br>`;
 
@@ -133,39 +133,39 @@ function process_records(records) {
             }
         }
 
-        if (records[i].date_of_admission.length > 0) {
+        if (records[i].date_of_admission?.length > 0) {
             let date = format_date(records[i].date_of_admission);
             date_of_admission = `<label style="font-weight: bold; font-size: small">Date of Admission:</label> ${date}<br>`;
         }
 
-        if (records[i].date_of_discharge.length > 0) {
+        if (records[i].date_of_discharge?.length > 0) {
             let date = format_date(records[i].date_of_discharge);
             date_of_discharge = `<label style="font-weight: bold; font-size: small">Date of Discharge:</label> ${date}<br>`;
         }
 
-        if (records[i].date_of_death.length > 0) {
+        if (records[i].date_of_death?.length > 0) {
             let date = format_date(records[i].date_of_death);
             date_of_death = `<label style="font-weight: bold; font-size: small">Date of Death:</label> ${date}<br>`;
         }
 
-        if (records[i].address_at_time_of_application.length > 0) {
+        if (records[i].address_at_time_of_application?.length > 0) {
 
             address_at_time_of_application = `<br><label style="font-weight: bold; font-size: small">Address at the time of Application:</label><br> ${records[i].address_at_time_of_application}<br>`;
 
-            if (records[i].city.length > 0 || records[i].state > 0) {
+            if (records[i].city?.length > 0 || records[i]?.state > 0) {
                 address_at_time_of_application += `${records[i].city}, ${records[i].state}<br><br>`;
             }
         }
 
-        if (records[i].disease_duration.length > 0) {
+        if (records[i].disease_duration?.length > 0) {
             disease_duration = `<label style="font-weight: bold; font-size: small">Duration of Disease:</label> ${records[i].disease_duration}<br>`;
         }
 
-        if (records[i].contracted_city.length > 0 || records[i].contracted_state.length > 0 || records[i].contracted_country.length > 0) {
+        if (records[i].contracted_city?.length > 0 || records[i].contracted_state?.length > 0 || records[i].contracted_country?.length > 0) {
             location_where_contracted = `Disease contracted in ${records[i].contracted_city}, ${records[i].contracted_state} ${records[i].contracted_country} <br>`;
         }
 
-        if (records[i].notes !== null && records[i].notes.length > 0) {
+        if (records[i].notes?.length > 0) {
             notes = `<label style="font-weight: bold; font-size: small">Notes:</label> ${records[i].notes}<br><hr>`;
         } else {
             notes = 'No notes available<br><hr>';

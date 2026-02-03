@@ -92,6 +92,8 @@ logs/*.gz
 tmp
 test
 *.sql
+*.db
+*.sqlite3
 public/tn/*.*
 public/tn_cache/*.*
 
