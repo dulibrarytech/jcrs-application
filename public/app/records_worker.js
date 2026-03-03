@@ -128,7 +128,7 @@ function process_records(records) {
 
             former_address = `<br><label style="font-weight: bold; font-size: small">Former Address:</label><br> ${records[i].address_at_time_of_application}<br>`;
 
-            if (records[i].former_city.length > 0 || records[i].former_state > 0) {
+            if (records[i].former_city?.length > 0 || records[i].former_state?.length > 0) {
                 former_address += `${records[i].former_city}, ${records[i].former_state}`;
             }
         }
